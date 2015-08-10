@@ -6,3 +6,5 @@ To lower memory usage, the extension only runs when a history item is created (s
 #####Download
 
 [Chrome Web Store](https://chrome.google.com/webstore/detail/history-disabler/idfabmmfgdfcjehenodijniddhhgodgo)
+
+[Opera Addons](https://addons.opera.com/en/extensions/details/history-disabler/)
