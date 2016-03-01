@@ -24,7 +24,7 @@ chrome.history.onVisited.addListener(function(historyItem) {
 });
 
 /*	Clear history on tab close. 
-	This prevents browsing history from being listed in 'Recently closed'. */
+	This clears browsing history listed in 'Recently closed'. */
 chrome.tabs.onRemoved.addListener(function() {
 	clearBrowsingData();
 });
