@@ -9,22 +9,23 @@ function clearBrowsingData() {
 	});
 }
 
-/*	Clear all browsing history on install. */
-chrome.runtime.onInstalled.addListener(function(details){
-	if(details.reason == "install"){
+/*	Call clearBrowsingData() on install. */
+chrome.runtime.onInstalled.addListener(function(details) {
+	if (details.reason == "install") {
 		clearBrowsingData();
 	}
 });
 
-/*	Remove a history item immediately after being generated. */
+/*	Call clearBrowsingData() after a history item is generated. */
 chrome.history.onVisited.addListener(function(historyItem) {
-	chrome.history.deleteUrl({
+	/*chrome.history.deleteUrl({
 		"url": historyItem.url
-	});
+	});*/
+	clearBrowsingData();
 });
 
-/*	Clear history on tab close. 
-	This clears browsing history listed in 'Recently closed'. */
+/*	Call clearBrowsingData() on tab close. 
+	This clears any browsing history listed in 'Recently closed'. */
 chrome.tabs.onRemoved.addListener(function() {
 	clearBrowsingData();
 });
