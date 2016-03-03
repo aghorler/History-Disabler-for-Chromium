@@ -9,6 +9,13 @@ function clearBrowsingData() {
 	});
 }
 
+/*	Function to clear a specific item from history using the History API. */
+function clearHistory(historyItem){
+	chrome.history.deleteUrl({
+		"url": historyItem
+	});
+}
+
 /*	Call clearBrowsingData() on install. */
 chrome.runtime.onInstalled.addListener(function(details) {
 	if (details.reason == "install") {
@@ -16,12 +23,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	}
 });
 
-/*	Call clearBrowsingData() after a history item is generated. */
+/*	Call clearHistory when an website is added to history. */
 chrome.history.onVisited.addListener(function(historyItem) {
-	/*chrome.history.deleteUrl({
-		"url": historyItem.url
-	});*/
-	clearBrowsingData();
+	clearHistory(historyItem.url);
 });
 
 /*	Call clearBrowsingData() on tab close. 
