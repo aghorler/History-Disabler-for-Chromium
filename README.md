@@ -1,11 +1,11 @@
 ## History Disabler for Chromium
-#####Version 1.3.1 | August 4 2015
+#####Version 1.4 | March 4 2016
 
-Removes history items as they're created to effectively disable History in Chromium browsers.
+Uses different methods to effectively disable history in Chrome (and other Chromium) browsers.
 
-To lower memory usage, the extension only runs when a history item is created (so said item can be removed).
+To lower memory usage, the extension doesn't persistently run in memory.
 
-The only required permission is 'history'.
+The only required permissions are `browsingData`, `history`, and `tabs`.
 
 #####Download
 
