@@ -3,9 +3,9 @@
 
 Uses different methods to effectively disable history in Chrome (and other Chromium) browsers.
 
-To lower memory usage, the extension doesn't persistently run in memory.
+To lower memory usage, the extension does not persistently run in memory.
 
-The only required permissions are `browsingData`, `history`, and `tabs`.
+The only required permissions are `browsingData`, `history`, and `tabs`. [See here](https://github.com/rentamob/History-Disabler-for-Chromium/blob/master/DOCUMENTATION.md#permissions) for an explanation of these permissions.
 
 #####Download
 
