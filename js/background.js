@@ -19,7 +19,7 @@ function clearHistory(historyItem){
 /*	Function to erase an item from download history using the Downloads API. */
 function eraseDownload(downloadItem){
 	if(typeof downloadItem.state !== 'undefined'){
-		if(downloadItem.state.current === 'complete'){
+		if(downloadItem.state.current === 'complete' || downloadItem.state.current === 'interrupted'){
 			chrome.downloads.erase({
 				limit: 1,
 				id: downloadItem.id
