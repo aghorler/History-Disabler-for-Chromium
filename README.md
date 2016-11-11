@@ -1,11 +1,11 @@
 ## History Disabler for Chromium
-#####Version 1.4 | March 4 2016
+#####Version 1.5 | November 11 2016
 
-Uses different methods to effectively disable history in Chrome (and other Chromium) browsers.
+Uses different methods to effectively disable browsing history in Chrome (and other Chromium) browsers.
 
 To lower memory usage, the extension does not persistently run in memory.
 
-The only required permissions are `browsingData`, `history`, and `tabs`. [See here](https://github.com/rentamob/History-Disabler-for-Chromium/blob/master/DOCUMENTATION.md#permissions) for an explanation of these permissions.
+The required permissions are explained [here](https://github.com/rentamob/History-Disabler-for-Chromium/blob/master/DOCUMENTATION.md#permissions).
 
 #####Download
 
