@@ -5,7 +5,7 @@ Uses different methods to effectively disable browsing history in Chrome (and ot
 
 To lower memory usage, the extension does not persistently run in memory.
 
-The required permissions are explained [here](https://github.com/rentamob/History-Disabler-for-Chromium/blob/master/DOCUMENTATION.md#permissions).
+The required permissions are explained [here](https://github.com/aghorler/History-Disabler-for-Chromium/blob/master/DOCUMENTATION.md#permissions).
 
 #####Download
 
