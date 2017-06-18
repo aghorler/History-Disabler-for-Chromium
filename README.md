@@ -1,5 +1,5 @@
 ## History Disabler for Chromium
-**Version 1.5.1 | November 15 2016**
+**Version 1.5.2 | June 18 2017**
 
 Uses different methods to effectively disable browsing history in Chrome (and other Chromium) browsers.
 
@@ -23,7 +23,7 @@ The extension is hosted entirely on GitHub, the Chrome Web Store, and Opera Addo
 
 #### License
 
-Copyright 2016 Aaron Horler
+Copyright 2017 Aaron Horler
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
