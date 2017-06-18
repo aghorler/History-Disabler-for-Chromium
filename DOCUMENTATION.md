@@ -7,7 +7,6 @@ The permissions History Disabler requires on install are declared in the manifes
     "permissions": [
 		  "browsingData",
 		  "history",
-		  "tabs",
 		  "downloads",
 		  "storage"
     ]
@@ -18,17 +17,13 @@ Each permission is required for the reasons set out below.
 
 To clear all history on tab close. 
 
-This removes items from the 'Recently closed' menu.
+This removes items from the 'Recently closed' tabs menu. This functionality is optional, and defaults to enabled.
 
 **history**
 
 To remove history items as they are added to history.
 
-This must be used alongside `browsingData`, becuase `browsingData` does not remove browsing history from the 'New tab' page.
-
-**tabs**
-
-To detect when a tab has been closed, so that history can be cleared from the 'Recently closed' menu using `browsingData`.
+This must be used alongside `browsingData`, because `browsingData` does not remove browsing history from the 'New tab' page.
 
 **downloads (Since 1.5)**
 
