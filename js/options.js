@@ -1,7 +1,9 @@
 function saveOptions(){
-	var option = document.getElementById('download_option').checked;
+	var downloadOption = document.getElementById('download_option').checked;
+	var tabsOption = document.getElementById('tabs_option').checked;
 	chrome.storage.local.set({
-		downloadOption: option
+		clearDownloads: downloadOption,
+		retainTabs: tabsOption
 	}, function(){
 		var status = document.getElementById('status');
 		status.textContent = 'Options saved.';
@@ -14,9 +16,11 @@ function saveOptions(){
 
 function restoreOptions(){
 	chrome.storage.local.get({
-		downloadOption: false
+		clearDownloads: false,
+		retainTabs: false
 	}, function(items){
-		document.getElementById('download_option').checked = items.downloadOption;
+		document.getElementById('download_option').checked = items.clearDownloads;
+		document.getElementById('tabs_option').checked = items.retainTabs;
 	});
 }
 

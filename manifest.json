@@ -1,6 +1,6 @@
 {
 	"name": "History Disabler",
-	"version": "1.5.1",
+	"version": "1.5.2",
 	"manifest_version": 2,
 	"description": "Disable history in Chrome.",
 	"background": {
@@ -18,7 +18,6 @@
 	"permissions": [
 		"browsingData",
 		"history",
-		"tabs",
 		"downloads",
 		"storage"
 	]
