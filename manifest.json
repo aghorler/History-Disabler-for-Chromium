@@ -1,6 +1,6 @@
 {
   "name": "History Disabler",
-  "version": "1.6",
+  "version": "1.6.1",
   "manifest_version": 2,
   "description": "Disable history in Chrome.",
   "background": {
