@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>History Disabler</title>
-	</head>
-	<body>
-		<h3>Advanced options</h3>
+  <head>
+    <title>History Disabler</title>
+  </head>
+  <body>
+    <h3>Advanced options</h3>
 
-		<p>
-			<label>
-				<input type="checkbox" id="download_option"> Disable download history.
-				<br>
-				<i style="color:red">Enabling this setting will have the browser forget a download as soon as the download is completed, or interrupted.</i>
-			</label>
-		</p>
+    <p>
+      <label>
+        <input type="checkbox" id="download_option" style="top: -2px;"> 
+        <label for="download_option">Disable download history.</label>
+        <br>
+        <p style="color:red">Enabling this setting will cause the browser to forget a download as soon as the download is completed, or interrupted.</p>
+      </label>
+    </p>
 
-		<p>
-			<label>
-				<input type="checkbox" id="tabs_option"> Retain 'Recently closed' tabs.
-				<br>
-				<i style="color:red">Enabling this setting will cause History Disabler not to clear the list of 'Recently closed' tabs for the session. This will enable, for example, the Ctrl-Shift-T keyboard shortcut to open recently closed tabs.</i>
-			</label>
-		</p>
+    <p style="margin-top: 20px;">
+      <label>
+        <input type="checkbox" id="tabs_option" style="top: -2px;">
+        <label for="tabs_option">Retain 'Recently closed' tabs.</label>
+        <br>
+        <p style="color:red">Enabling this setting will prevent clearing 'Recently closed' tabs for the session. This will enable, for example, the Ctrl-Shift-T keyboard shortcut to open recently closed tabs.</p>
+      </label>
+    </p>
 
-		<p>
-			<span>
-				<button id="save">Apply settings</button>
-			</span>
+    <p align="center" style="color:grey">
+      Developed by <a href="https://aaronhorler.com">Aaron Horler</a> (aghorler) | <a href="https://github.com/aghorler/History-Disabler-for-Chromium">GitHub source</a>
+    </p>
 
-			<span id="status"></span>
-		</p>
-
-		<p align="center" style="color:grey">
-			Developed by Aaron Horler (aghorler) | <a href="https://github.com/aghorler/History-Disabler-for-Chromium">GitHub source</a>
-		</p>
-
-		<script src="/js/options.js"></script>
-	</body>
+    <script src="/js/options.js"></script>
+  </body>
 </html>

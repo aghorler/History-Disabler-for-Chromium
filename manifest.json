@@ -1,24 +1,24 @@
 {
-	"name": "History Disabler",
-	"version": "1.5.2",
-	"manifest_version": 2,
-	"description": "Disable history in Chrome.",
-	"background": {
-		"scripts": ["/js/background.js"],
-		"persistent": false
-	},
-	"icons": {
-		"128": "/img/icon128.png"
-	},
-	"options_ui": {
+  "name": "History Disabler",
+  "version": "1.6",
+  "manifest_version": 2,
+  "description": "Disable history in Chrome.",
+  "background": {
+    "scripts": ["/js/background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "128": "/img/icon128.png"
+  },
+  "options_ui": {
         "page": "/html/options.html",
         "chrome_style": true,
         "open_in_tab": false
     },
-	"permissions": [
-		"browsingData",
-		"history",
-		"downloads",
-		"storage"
-	]
+  "permissions": [
+    "browsingData",
+    "history",
+    "downloads",
+    "storage"
+  ]
 }

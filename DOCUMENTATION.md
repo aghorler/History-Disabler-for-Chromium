@@ -5,10 +5,10 @@
 The permissions History Disabler requires on install are declared in the manifest.
 
     "permissions": [
-		  "browsingData",
-		  "history",
-		  "downloads",
-		  "storage"
+      "browsingData",
+      "history",
+      "downloads",
+      "storage"
     ]
 
 Each permission is required for the reasons set out below.
