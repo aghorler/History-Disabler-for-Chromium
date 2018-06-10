@@ -19,6 +19,7 @@
     "browsingData",
     "history",
     "downloads",
-    "storage"
+    "storage",
+    "tabs"
   ]
 }

@@ -9,10 +9,10 @@ function clearBrowsingData(){
   });
 }
 
-/* Function to clear a specific item from history using the History API. */
-function clearHistory(historyItem){
+/* Function to clear a specific URL from history using the History API. */
+function clearHistory(historyUrl){
   chrome.history.deleteUrl({
-    "url": historyItem
+    "url": historyUrl
   });
 }
 
@@ -28,19 +28,32 @@ function eraseDownload(downloadItem){
   }
 }
 
-/* Call clearHistory when a website is added to history. */
-chrome.history.onVisited.addListener(function(historyItem){
-  clearHistory(historyItem.url);
+var tabs = [];
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+  if(changeInfo.url !== undefined){
+    if(tabs[tabId] !== undefined){
+      tabs[tabId].push(changeInfo.url);
+      console.log(tabs[tabId]);
+    }
+    else{
+      tabs[tabId] = [];
+      tabs[tabId].push(changeInfo.url);
+      console.log(tabs[tabId]);
+    }
+  }
 });
 
-/* Call clearBrowsingData on tab close, if retain option is not enabled. 
-  This clears any browsing history listed in 'Recently closed' tabs. */
-chrome.tabs.onRemoved.addListener(function(){
-  chrome.storage.local.get('retainTabs', function(option){
-    if(!option.retainTabs){
-      clearBrowsingData();
+chrome.tabs.onRemoved.addListener(function(tabId, removeInfo){
+  if(tabs[tabId] !== undefined){
+    var i;
+    for(i = 0; i < tabs[tabId].length; i++){
+      console.log("Clearing " + tabs[tabId][i]);
+      clearHistory(tabs[tabId][i]);
     }
-  });
+
+    tabs.splice(tabId, 1);
+  }
 });
 
 /* Call eraseDownload on download completion, if clear option is enabled. */
