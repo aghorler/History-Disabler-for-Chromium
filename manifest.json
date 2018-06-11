@@ -1,11 +1,11 @@
 {
   "name": "History Disabler",
-  "version": "1.6.1",
+  "version": "2.0",
   "manifest_version": 2,
   "description": "Disable history in Chrome.",
   "background": {
     "scripts": ["/js/background.js"],
-    "persistent": false
+    "persistent": true
   },
   "icons": {
     "128": "/img/icon128.png"
