@@ -34,12 +34,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
   if(changeInfo.url !== undefined){
     if(tabs[tabId] !== undefined){
       tabs[tabId].push(changeInfo.url);
-      console.log("added " + changeInfo.url + " to index " + tabId);
+      //console.log("added " + changeInfo.url + " to index " + tabId);
     }
     else{
       tabs[tabId] = [];
       tabs[tabId].push(changeInfo.url);
-      console.log("created and added " + changeInfo.url + " to index " + tabId);
+      //console.log("created and added " + changeInfo.url + " to index " + tabId);
     }
   }
 });
@@ -48,7 +48,7 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo){
   if(tabs[tabId] !== undefined){
     var i;
     for(i = 0; i < tabs[tabId].length; i++){
-      console.log("Clearing " + tabs[tabId][i]);
+      //console.log("Clearing " + tabs[tabId][i]);
       clearHistory(tabs[tabId][i]);
     }
 

@@ -1,5 +1,5 @@
 ## History Disabler for Chromium
-**Version 1.6.1 | May 8 2018**
+**Version 2.0 | June 25 2018**
 
 Uses different methods to effectively disable browsing history in Chrome (and other Chromium) browsers.
 
