@@ -28,41 +28,70 @@ function eraseDownload(downloadItem){
   }
 }
 
+/* Initiate array to store tab history. */
 var tabs = [];
 
+/* Store tab history if extension is in modern mode. */
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
-  if(changeInfo.url !== undefined){
-    if(tabs[tabId] !== undefined){
-      tabs[tabId].push(changeInfo.url);
-      //console.log("added " + changeInfo.url + " to index " + tabId);
+  chrome.storage.local.get('disableMethodLegacy', function(option){
+    if(!option.disableMethodLegacy){
+      if(changeInfo.url !== undefined){
+        if(tabs[tabId] !== undefined){
+          tabs[tabId].push(changeInfo.url);
+        }
+        else{
+          tabs[tabId] = [];
+          tabs[tabId].push(changeInfo.url);
+        }
+      }
     }
-    else{
-      tabs[tabId] = [];
-      tabs[tabId].push(changeInfo.url);
-      //console.log("created and added " + changeInfo.url + " to index " + tabId);
-    }
-  }
+  });
 });
 
+/* Delete history, or delete recently closed tab history, depending on extension mode and options. */
 chrome.tabs.onRemoved.addListener(function(tabId, removeInfo){
-  if(tabs[tabId] !== undefined){
-    var i;
-    for(i = 0; i < tabs[tabId].length; i++){
-      //console.log("Clearing " + tabs[tabId][i]);
-      clearHistory(tabs[tabId][i]);
-    }
+  chrome.storage.local.get('disableMethodLegacy', function(option){
+    if(!option.disableMethodLegacy){
+      if(tabs[tabId] !== undefined){
+        var i;
+        for(i = 0; i < tabs[tabId].length; i++){
+          clearHistory(tabs[tabId][i]);
+        }
 
-    tabs[tabId] = [];
-  }
+        tabs[tabId] = [];
+      }
+    }
+    else{
+      chrome.storage.local.get('retainTabs', function(option){
+        if(!option.retainTabs){
+          clearBrowsingData();
+        }
+      });
+    }
+  });
+});
+
+/* Delete history immediately if extension is in legacy mode. */
+chrome.history.onVisited.addListener(function(historyItem){
+  chrome.storage.local.get('disableMethodLegacy', function(option){
+    if(option.disableMethodLegacy){
+      clearHistory(historyItem.url);
+    }
+  });
 });
 
 /* Call eraseDownload on download completion, if clear option is enabled. */
-chrome.downloads.onChanged.addListener(function(downloadItem){
-  chrome.storage.local.get('clearDownloads', function(option){
+chrome.storage.local.get('clearDownloads', function(option){
+  chrome.downloads.onChanged.addListener(function(downloadItem){
     if(option.clearDownloads){
       eraseDownload(downloadItem);
     }
   });
+});
+
+/* Open options page on install and update. */
+chrome.runtime.onInstalled.addListener(function(details){
+  chrome.runtime.openOptionsPage();
 });
 
 /* Call clearBrowsingData on browser start, and extension install. */

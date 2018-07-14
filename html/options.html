@@ -3,17 +3,40 @@
   <head>
     <title>History Disabler</title>
   </head>
-  <body>
+  <body style="width: 300px;">
     <h3>Advanced options</h3>
 
-    <p>
-      <input type="checkbox" id="download_option" style="top: -2px;"> 
-      <label for="download_option">Disable download history.</label>
-      <br>
-      <p style="color:red">Enabling this setting will cause the browser to forget a download as soon as the download is completed, or interrupted.</p>
-    </p>
+    <div style="margin-top: 25px;">
+      <h4>Disable method</h4>
 
-    <p align="center" style="color:grey">
+      <p>
+        <input id="method-modern" type="radio" name="method" value="modern" checked>
+        <label for="method-modern">Modern (for Chromium 67+).</label><br>
+        <input id="method-legacy" type="radio" name="method" value="legacy">
+        <label for="method-legacy">Legacy.</label>
+      </p>
+
+      <p id="tabs-option-container" style="color: grey;">
+        <input type="checkbox" id="tabs-option" style="top: -2px;" disabled>
+        <label for="tabs-option">Retain 'Recently closed' tabs.</label>
+      </p>
+
+      <p><span style="font-weight: bold;">Modern</span> will cause history to be automatically deleted when responsible tabs are closed.</p>
+      <p><span style="font-weight: bold;">Legacy</span> will cause history to be automatically deleted when it is generated. This causes issues with Chromium 67+.</p>
+    </div>
+
+    <div style="margin-top: 25px;">
+      <h4>Download history</h4>
+
+      <p>
+        <input type="checkbox" id="download-option" style="top: -2px;"> 
+        <label for="download-option">Disable download history.</label>
+      </p>
+
+      <p>This setting will cause the browser to forget a download as soon as the download is completed, or interrupted.</p>
+    </div>
+
+    <p style="color: grey; margin-top: 20px; text-align: center;">
       Developed by <a href="https://aaronhorler.com">Aaron Horler</a> (aghorler) | <a href="https://github.com/aghorler/History-Disabler-for-Chromium">GitHub source</a>
     </p>
 

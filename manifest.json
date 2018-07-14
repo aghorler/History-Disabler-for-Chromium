@@ -1,8 +1,8 @@
 {
   "name": "History Disabler",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "manifest_version": 2,
-  "description": "Disable history in Chrome.",
+  "description": "Disable history in Chrome by deleting history when responsible tabs are closed.",
   "background": {
     "scripts": ["/js/background.js"],
     "persistent": true
