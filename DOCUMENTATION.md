@@ -20,7 +20,7 @@ To clear all history on browser start-up.
 
 **history** and **tabs**
 
-To remove history items as their corresponding tabs are closed.
+To remove history items as their corresponding tabs are closed, or immediately depending on configuration.
 
 **downloads (Since 1.5)**
 

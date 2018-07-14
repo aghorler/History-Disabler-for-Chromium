@@ -1,9 +1,7 @@
 ## History Disabler for Chromium
-**Version 2.0.2 | June 25 2018**
+**Version 2.1.0 | July 14 2018**
 
 Uses different methods to effectively disable browsing history in Chrome (and other Chromium) browsers.
-
-To lower memory usage, the extension does not persistently run in memory.
 
 The required permissions are explained [here](https://github.com/aghorler/History-Disabler-for-Chromium/blob/master/DOCUMENTATION.md#permissions).
 
